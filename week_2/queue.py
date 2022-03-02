@@ -16,49 +16,6 @@ class queue:
         if self.queue==[]:
             return True
     
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #  class MyQueue:
 
 #     def __init__(self):
