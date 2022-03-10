@@ -1,62 +1,34 @@
-from collections  import deque 
-class MyCircularDeque:
-    def __init__ (self, k: int):
-        self.deque = []
-        self.max = k
-        self.len_deque = 0
-    def insertFront(self, value: int) -> bool:
-        if self.isFull():      
-            return False
-        else:
-            self.deque = [value] + self.deque                
-            return True
-    def insertLast(self, value: int) -> bool:
-        if self.isFull():   
-            return False
-        else:
-            self.deque.append(value)
-                      
-            return True
-        
-    def deleteFront(self) -> bool:
-        if self.isEmpty():
-            return False
-        
-        self.deque.pop(0)
-        
-        return True
-    def deleteLast(self) -> bool:
-        print(self.deque)
-        if self.isEmpty():     
-            return False
-        
-        self.deque.pop()
-        return True
-    def getFront(self) -> int:
-        if self.isEmpty():        
-            return -1
-        else:
-            return self.deque[0]
-        
-    def getRear(self) -> int:
-        if self.isEmpty():       
-            return -1
-        else:
-            return self.deque[-1]
-    def isEmpty(self) -> bool:
-        return len(self.deque) == 0
-    
-    def isFull(self) -> bool:
-        return len(self.deque) == self.max
+from collections import deque
+class queue_stack():
+    def __init__(self):
+        self.stack1=[]
+        self.stack2=deque()
+    def push(self,value):
+        self.stack1.append(value)
+        while self.stack1!=[]:
+            ermias=self.stack1.pop()
+
+            self.stack2.appendleft(ermias)
 
 
-# Your MyCircularDeque object will be instantiated and called as such:
-#obj = MyCircularDeque()
-# param_1 = obj.insertFront(value)
-# param_2 = obj.insertLast(value)
-# param_3 = obj.deleteFront()
-# param_4 = obj.deleteLast()
-# param_5 = obj.getFront()
-# param_6 = obj.getRear()
-# param_7 = obj.isEmpty()
-# param_8 = obj.isFull()
+
+    def peek(self):
+        return self.stack2[-1]
+        
+    def pop(self):
+        return self.stack2.pop()
+
+    def empty(self):
+        if  not self.stack2:
+            return True
+        else:
+            return False
+
+queue= queue_stack()
+queue.push(2)
+
+
+
+queue.pop()
+print(queue.stack2)
+print(queue.empty())
